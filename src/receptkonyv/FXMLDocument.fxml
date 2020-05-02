@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="fopane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="receptkonyv.FXMLDocumentController">
+    <children>
+        <AnchorPane fx:id="bellsoancorpaneegy" prefHeight="800.0" prefWidth="1200.0">
+            <children>
+                <ImageView fitHeight="820.0" fitWidth="1220.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../hatter.jpg" />
+                    </image>
+                </ImageView>
+                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="433.0" layoutY="107.0" prefHeight="62.0" prefWidth="335.0" style="-fx-background-color: rgba(255,255,255,0.6);" text="Lépj be vagy regisztrálj!">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Button layoutX="897.0" layoutY="201.0" mnemonicParsing="false" onAction="#xgomb" text="  X  " visible="false" fx:id="xgombid" />
+                <HBox fx:id="lbevagyrhbox" layoutX="396.0" layoutY="293.0" prefHeight="78.0" prefWidth="410.0" spacing="70.0">
+                    <children>
+                        <Button mnemonicParsing="false" onAction="#regisztraciosoldalgomb" prefHeight="35.0" prefWidth="150.0" text="Regisztráció" />
+                        <Button mnemonicParsing="false" onAction="#belepesoldalgomb" prefHeight="35.0" prefWidth="150.0" text="Belépés" />
+                    </children>
+                    <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                    </padding>
+                </HBox>
+                <AnchorPane fx:id="regisztracioancorpane" layoutX="407.0" layoutY="179.0" prefHeight="459.0" prefWidth="372.0" visible="false">
+                    <children>
+                        <Label layoutX="27.0" layoutY="60.0" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: rgba(255,255,255,0.6);" text="Felhasználónév: ">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="27.0" layoutY="113.0" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: rgba(255,255,255,0.6);" text="E-mail cím: ">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="27.0" layoutY="169.0" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: rgba(255,255,255,0.6);" text="Jelszó: ">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="27.0" layoutY="230.0" prefHeight="30.0" prefWidth="140.0" style="-fx-background-color: rgba(255,255,255,0.6);" text="Jelszó újra: ">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtfelhasznalonevre" layoutX="193.0" layoutY="60.0" prefHeight="35.0" prefWidth="180.0" />
+                        <TextField fx:id="txtemailcimre" layoutX="193.0" layoutY="113.0" prefHeight="35.0" prefWidth="180.0" />
+                        <PasswordField fx:id="jelszore" layoutX="193.0" layoutY="169.0" prefHeight="35.0" prefWidth="180.0" />
+                        <PasswordField fx:id="jelszoujrare" layoutX="193.0" layoutY="230.0" prefHeight="35.0" prefWidth="180.0" />
+                        <Button defaultButton="true" layoutX="120.0" layoutY="319.0" mnemonicParsing="false" onAction="#regisztraciogomb" prefHeight="35.0" prefWidth="132.0" text="Regisztráció">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+                <AnchorPane fx:id="belepesancorpane" layoutX="361.0" layoutY="216.0" prefHeight="369.0" prefWidth="480.0" visible="false">
+                    <children>
+                        <Label layoutX="27.0" layoutY="204.0" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: rgba(255,255,255,0.6);" text="Jelszó">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <Label layoutX="27.0" layoutY="120.0" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: rgba(255,255,255,0.6);" text="Felhasználónév">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <TextField fx:id="txtfelhasznalobe" layoutX="260.0" layoutY="120.0" prefHeight="35.0" prefWidth="180.0" />
+                        <PasswordField fx:id="bejelentkezesbe" layoutX="260.0" layoutY="204.0" prefHeight="35.0" prefWidth="180.0" />
+                        <Button defaultButton="true" layoutX="174.0" layoutY="298.0" mnemonicParsing="false" onAction="#belepesgomb" prefHeight="35.0" prefWidth="132.0" text="Belépés">
+                            <font>
+                                <Font size="17.0" />
+                            </font>
+                        </Button>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="bellsoancorpaneketto" prefHeight="800.0" prefWidth="1200.0" visible="false">
+            <children>
+                <ImageView fitHeight="820.0" fitWidth="1220.0" layoutX="-1.0">
+                    <image>
+                        <Image url="@../hatter.jpg" />
+                    </image>
+                </ImageView>
+                <TextField fx:id="txtkeres" layoutX="22.0" layoutY="18.0" prefHeight="35.0" prefWidth="240.0" />
+                <Button fx:id="keresestorlesegombid" layoutX="280.0" layoutY="18.0" mnemonicParsing="false" onAction="#keresestorlesegomb" prefHeight="35.0" prefWidth="130.0" text="Keresés törlése" />
+                <Button fx:id="receptekgombid" layoutX="22.0" layoutY="114.0" mnemonicParsing="false" onAction="#receptekgomb" prefHeight="50.0" prefWidth="150.0" text="Receptek  ">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="sajatreceptekgombid" layoutX="22.0" layoutY="200.0" mnemonicParsing="false" onAction="#sajatreceptekgomb" prefHeight="50.0" prefWidth="150.0" text="Saját receptek  ">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="kedvencekgombid" layoutX="22.0" layoutY="280.0" mnemonicParsing="false" onAction="#kedvencekgombid" prefHeight="50.0" prefWidth="150.0" text="Kedvencek  ">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Button>
+                <Button fx:id="sugogombid" layoutX="24.0" layoutY="360.0" mnemonicParsing="false" onAction="#sugogomb" prefHeight="50.0" prefWidth="150.0" text="Súgó  ">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+               <effect>
+                  <Blend />
+               </effect>
+                </Button>
+                <Button fx:id="kilepesgombid" cancelButton="true" layoutX="1125.0" layoutY="20.0" mnemonicParsing="false" onAction="#kilepesgomb" prefHeight="35.0" prefWidth="70.0" text="Kilépés" />
+                <TableView fx:id="tbllista" layoutX="300.0" layoutY="110.0" prefHeight="600.0" prefWidth="750.0" tableMenuButtonVisible="true" visible="false">
+                    <columns>
+                        <TableColumn fx:id="tablecrceptid" minWidth="90.0" prefWidth="90.0" style="-fx-text-align: center;" text="Sorszáma" />
+                        <TableColumn fx:id="tablecreceptnev" minWidth="300.0" prefWidth="300.0" text="A recept neve" />
+                        <TableColumn fx:id="tableckategoria" minWidth="150.0" prefWidth="150.0" text="Kategória" />
+                        <TableColumn fx:id="tablecalkotoja" minWidth="180.0" prefWidth="180.0" text="Alkotó" />
+                    </columns>
+                </TableView>
+            <TableView fx:id="tbllista1" layoutX="300.0" layoutY="110.0" prefHeight="600.0" prefWidth="750.0" tableMenuButtonVisible="true" visible="false">
+               <columns>
+                  <TableColumn fx:id="tablecrceptid1" minWidth="90.0" prefWidth="90.0" text="Sorszáma" />
+                  <TableColumn fx:id="tablecreceptnev1" minWidth="300.0" prefWidth="300.0" text="A recept neve" />
+                  <TableColumn fx:id="tableckategoria1" minWidth="150.0" prefWidth="150.0" text="Kategória" />
+                  <TableColumn fx:id="tablecalkotoja1" minWidth="180.0" prefWidth="180.0" text="Alkotó" />
+               </columns>
+            </TableView>
+            <TableView fx:id="tbllista2" layoutX="300.0" layoutY="110.0" prefHeight="600.0" prefWidth="750.0" tableMenuButtonVisible="true" visible="false">
+               <columns>
+                  <TableColumn fx:id="tablecrceptid2" minWidth="90.0" prefWidth="90.0" text="Sorszáma" />
+                  <TableColumn fx:id="tablecreceptnev2" minWidth="300.0" prefWidth="300.0" text="A recept neve" />
+                  <TableColumn fx:id="tableckategoria2" minWidth="150.0" prefWidth="150.0" text="Kategória" />
+                  <TableColumn fx:id="tablecalkotoja2" minWidth="180.0" prefWidth="180.0" text="Alkotó" />
+               </columns>
+            </TableView>
+                <Label fx:id="lblfhnev" alignment="CENTER" contentDisplay="CENTER" layoutX="540.0" layoutY="18.0" prefHeight="35.0" prefWidth="254.0" style="-fx-background-color: rgba(255,255,255,0.6);" text="xy receptjei" textAlignment="CENTER" textFill="#514310">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            <Label fx:id="lblfhnev1" alignment="CENTER" contentDisplay="CENTER" layoutX="794.0" layoutY="18.0" prefHeight="35.0" prefWidth="100.0" style="-fx-background-color: rgba(255,255,255,0.6);" text="receptjei  " textAlignment="CENTER" textFill="#514310">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+                <Button fx:id="ujreceptgombid" layoutX="1060.0" layoutY="570.0" mnemonicParsing="false" onAction="#ujreceptgomb" prefHeight="35.0" prefWidth="120.0" text="Új Recept">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="receptmodositasagombid" layoutX="1060.0" layoutY="630.0" mnemonicParsing="false" onAction="#receptmodositasagomb" prefHeight="35.0" prefWidth="120.0" text=" Módosítás" AnchorPane.bottomAnchor="155.0" AnchorPane.rightAnchor="40.0">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Button fx:id="recepttorlesegombid" layoutX="1060.0" layoutY="690.0" mnemonicParsing="false" onAction="#recepttorlesegomb" prefHeight="35.0" prefWidth="120.0" text=" Törlés">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <ScrollPane fx:id="scrollpane1recept" layoutX="300.0" layoutY="110.0" prefHeight="630.0" prefWidth="700.0" visible="false">
+                    <content>
+                        <AnchorPane fx:id="scrollpaneancorpane1" minHeight="0.0" minWidth="0.0" prefHeight="630.0" prefWidth="680.0">
+                            <children>
+                                <TextField fx:id="ujreceptnev" layoutX="45.0" layoutY="45.0" prefHeight="30.0" prefWidth="250.0" text="A recept neve " />
+                                <TextField fx:id="ujkategoria" layoutX="378.0" layoutY="45.0" prefHeight="30.0" prefWidth="250.0" text="A recept kategóriája" />
+                                <TextArea fx:id="ahozzavalokszovegearea" layoutX="45.0" layoutY="106.0" prefHeight="245.0" prefWidth="285.0" text="llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll" wrapText="true" />
+                                <TextArea fx:id="areceptszovegearea" layoutX="45.0" layoutY="390.0" prefHeight="225.0" prefWidth="600.0" text="llllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllllll" wrapText="true" />
+                                  <Label fx:id="receptnevfelirat" layoutX="50.0" layoutY="20.0" text="A recept neve: " />
+                                  <Label fx:id="kategoriafelirat" layoutX="385.0" layoutY="20.0" text="A recept kategóriája: " />
+                                  <Label fx:id="hozzavalokfelirat" layoutX="50.0" layoutY="85.0" text="Hozzávalók: " />
+                                  <Label fx:id="receptszovegfelirat" layoutX="50.0" layoutY="370.0" text="A recept szövege: " />
+                            <Button fx:id="kimasolgombid" layoutX="515.0" layoutY="320.0" mnemonicParsing="false" onAction="#kimasolgomb" prefHeight="30.0" prefWidth="130.0" text="Recept másolás" />
+                        <Button fx:id="exporid" layoutX="535.0" layoutY="280.0" mnemonicParsing="false" onAction="#export" prefHeight="30.0" prefWidth="110.0" text="Kiírás txt-be" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </ScrollPane>
+            <Button fx:id="visszagombid" layoutX="1060.0" layoutY="515.0" mnemonicParsing="false" onAction="#visszagomb" text="  Vissza  " visible="false" />
+            <ScrollPane fx:id="scrollpane2felhasznaloiadatok" layoutX="300.0" layoutY="110.0" prefHeight="630.0" prefWidth="700.0" visible="false">
+               <content>
+                  <AnchorPane fx:id="scrollpaneancorpane11" minHeight="0.0" minWidth="0.0" prefHeight="630.0" prefWidth="680.0">
+                     <children>
+                        <TextField fx:id="felhkapcsolat" layoutX="288.0" layoutY="85.0" prefHeight="30.0" prefWidth="200.0" />
+                        <TextField fx:id="emailkapcsolat" layoutX="288.0" layoutY="135.0" prefHeight="30.0" prefWidth="200.0" />
+                        <Label layoutX="137.0" layoutY="90.0" prefHeight="20.0" prefWidth="150.0" text="Felhasználónév: " />
+                        <Label layoutX="137.0" layoutY="140.0" prefHeight="20.0" prefWidth="150.0" text="Email cím: " />
+                        <Button layoutX="287.0" layoutY="269.0" mnemonicParsing="false" onAction="#felhasznaloifioktorlese" prefHeight="30.0" prefWidth="220.0" text="Felhasználói fiók törlése" />
+                        <TextField fx:id="felhkapcsolat1" layoutX="288.0" layoutY="388.0" prefHeight="30.0" prefWidth="200.0" />
+                        <TextField fx:id="jelszokapcsolat1" layoutX="288.0" layoutY="423.0" prefHeight="30.0" prefWidth="200.0" />
+                        <TextField fx:id="emailkapcsolat1" layoutX="288.0" layoutY="457.0" prefHeight="30.0" prefWidth="200.0" />
+                        <Label layoutX="137.0" layoutY="393.0" prefHeight="20.0" prefWidth="150.0" text="Felhasználónév: " />
+                        <Label layoutX="137.0" layoutY="429.0" prefHeight="20.0" prefWidth="150.0" text="Jelszó:" />
+                        <Label layoutX="137.0" layoutY="462.0" prefHeight="20.0" prefWidth="150.0" text="Email cím: " />
+                        <Button layoutX="507.0" layoutY="388.0" mnemonicParsing="false" onAction="#felhasznalonevmodosit" text="Frissít" />
+                        <Button layoutX="507.0" layoutY="424.0" mnemonicParsing="false" onAction="#jelszomodosit" text="Frissít" />
+                        <Button layoutX="507.0" layoutY="457.0" mnemonicParsing="false" onAction="#emailmodosit" text="Frissít" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
+            <Button fx:id="profilgombid" layoutX="924.0" layoutY="20.0" mnemonicParsing="false" onAction="#profilgomb" prefHeight="35.0" prefWidth="70.0" text="Profil" />
+            <Button fx:id="kapcsolatgombid" layoutX="1001.0" layoutY="20.0" mnemonicParsing="false" onAction="#kapcsolatgomb" prefHeight="35.0" prefWidth="100.0" text="Kapcsolat" />
+            <CheckBox fx:id="kedvid" contentDisplay="RIGHT" layoutX="1060.0" layoutY="480.0" mnemonicParsing="false" nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: rgba(255,255,255,0.6);" text="Kedvenc" visible="false" />
+            </children>
+        </AnchorPane>
+    </children>
+</Pane>
